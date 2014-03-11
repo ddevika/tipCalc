@@ -1,0 +1,116 @@
+/* CSS File for Tip Calc */
+/* created by: dd; */
+
+
+
+/* font */
+@font-face {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-style: normal;
+}
+
+
+/* table */
+.singleline_field1 {
+width: 60%;
+padding: 50px;
+position: relative;
+margin-left: 110px;
+border: 1px solid rgb(218, 218, 218);
+font-family: Arial,Helvetica;
+font-size: 12px;
+}
+
+.singleline_field2 {
+width: 60%;
+padding: 24px;
+position: relative;
+margin-left: 85px;
+font-family: 'Raleway', Helvetica, sans-serif;
+font-size: 23px;
+}
+
+
+.title1 {
+padding: 8px;
+width: 15%;
+text-align: left;
+display: inline;
+}
+
+.field1 {
+width: 27%;
+padding: 0px;
+}
+
+.option1{
+border-left: 1px solid;
+border-top: 2px solid;
+border-right: 1px solid;
+border-bottom: 2px solid;
+border-width: 1px;
+padding-left: 3px;
+padding-top: -1px;
+
+
+}
+
+textarea {
+width: 31%;
+padding: 0px;
+font-family: 'Raleway', Helvetica, sans-serif;
+font-size: 16px;
+font-weight: bold;
+border-radius: 0px
+}
+
+.title2 {
+padding: 8px;
+width: 37%;
+text-align: left;
+font-family: 'Raleway', Helvetica, sans-serif;
+font-size: 16px;
+font-weight: bold;
+padding-top: 7px;
+}
+
+/*Responsive to any type of media*/
+
+/*iphone*/
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+.singleline_field1 {
+width: 480px;
+height: 960px;
+padding: 50px;
+position: fixed;
+margin-left: 110px;
+border: 1px solid rgb(218, 218, 218);
+font-family: Arial,Helvetica;
+font-size: 30px;
+}
+
+.title1 {
+padding: 8px;
+width: 50%;
+text-align: left;
+font-size: 18px;
+}
+
+.field1 {
+width: 50%;
+padding: 0px;
+}
+
+.singleline_field2 {
+width: 480px;
+padding: 24px;
+position: fixed;
+margin-left: 85px;
+font-family: 'Raleway', Helvetica, sans-serif;
+font-size: 40px;
+}
+
+	}
+
