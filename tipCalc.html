@@ -1,0 +1,124 @@
+
+<!doctype html>
+<!-- a simple calculator for deciding how much tip you are required to put in a restaurant
+<!-- designed by: dd
+!-->
+<html>
+<head>
+	<title>TIP calculator</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="author" content="DD">
+	<meta property="og:title" content="TIP Calculator" />
+	<link href="tipCalc.css" media="screen" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+<form name = "myForm">
+
+	<div class = "singleline_field2">
+		<a> tip calculator</a>
+	</div>
+	<div class = "singleline_field1">
+	<table width="100%" valign="center" border="0.5" cellpadding="5" cellspacing="0"><tbody>
+	<tr>
+		<td class ="title1" valign="top" align="left">enter the total amount ($):  </td>
+		<td class ="field1">
+			<input type = "text" size = "8" maxlength="5" onchange = "tCalc(); return false;" id="totalamt">
+	</tr>
+	<tr>
+		<td class ="title1" valign="top" align="left">choose the % of TIP:  </td>
+
+	</tr>
+	<tr>
+			<td class ="title1">
+			<input type = "radio" name ="tipamt" id = "tipamt" value ="15" onchange = "tCalc(); return false;" checked/> 15% <br/> 
+			<input type = "radio" name ="tipamt" id = "tipamt" value ="18" onchange = "tCalc(); return false;" /> 18% <br/> 
+			<input type = "radio" name ="tipamt" id ="tipamt" value ="20" onchange = "tCalc(); return false;" /> 20% <br/> 
+			<input type = "radio" name ="tipamt" id ="tipamt"value ="25" onchange = "tCalc(); return false;" /> 25% <br/> 
+
+	</tr>
+	<tr>
+			<td class ="title1" valign="top" align="left">split between (number of people):  </td>
+			<td class ="field1">
+			<input type = "text" size = "8" maxlength="2" name ="totsplit" id="totsplit" onchange = "tCalc(); return false;">
+	</tr>
+
+</tbody></table>
+	<table width="100%" valign="center" border="0.5" cellpadding="5" cellspacing="0">
+	<tr>
+			<td class ="title2" valign="top" align="left">total payment (after tip): $  </td>
+			<!--<input type = "hidden" size = "8" maxlength="2" onchange = "return tcalc.set(this)" id="totpay">-->
+			<td class ="field2">
+			<textarea name="outputArea" style = "border: none;" id="outputArea" onClick="this.select();" readonly="yes"></textarea>
+	</tr></table>
+
+		<!--placeholder-->
+	   <table width="100%" valign="center" border="0.5" cellpadding="5" cellspacing="0">
+		<td class ="title1">
+		<p><input type = "submit" value = "submit" id = "submit" onClick="tCalc(); return false;"></p>
+	</td></table>
+</div>
+</body>
+
+<script language = "javascript" type = "text/javascript">
+function tCalc() {
+	
+ var amt, tip, result;
+
+
+  amt = +document.getElementById ('totalamt').value;
+ // tip = +document.getElementById ('tipamt').value;
+
+  //tip amount 
+  	var tip;
+		if (document.myForm.tipamt[0].checked==true) {tip="15";}
+		else if (document.myForm.tipamt[1].checked==true) {tip="18";}
+		else if (document.myForm.tipamt[2].checked==true) {tip="20";}
+		else if (document.myForm.tipamt[3].checked==true) {tip="25";}
+		
+
+  //split between people
+  var split;
+  	if (document.myForm.totsplit.value == "")
+	{
+	split = 1;
+	}
+
+	else {
+	split = +document.getElementById ('totsplit').value;
+	}
+//var split = 1;
+
+result = (amt + (amt * (tip/100)))/split; 
+
+result = result.toFixed(2);
+
+//alert(result);
+document.getElementById('outputArea').value = result;
+//return result;
+}
+
+//test function for debugging
+function onClick(item){
+
+	var balance;
+		if (document.myForm.tipamt[0].checked==true) {balance="15";}
+		else if (document.myForm.tipamt[1].checked==true) {balance="18";}
+		else if (document.myForm.tipamt[2].checked==true) {balance="20";}
+		else if (document.myForm.tipamt[2].checked==true) {balance="25";}
+	
+	alert(balance)
+}
+
+function submit()
+{
+	document.getElementById("myForm").submit()
+}
+
+</script>
+</html>
+</form>
+
+
+
